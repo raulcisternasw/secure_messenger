@@ -1,10 +1,8 @@
 'use strict'
 
-require('dotenv').config();
-
 const User = require('../models/user');
 
-function getUser(req, res) {
+exports.get_user = function(req, res) {
   const id = req.params.id;
   console.log(`This is user: ${ id }`);
   User.findById(id)
@@ -20,5 +18,3 @@ function getUser(req, res) {
     });
   });
 };
-
-module.exports = getUser;
